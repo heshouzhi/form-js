@@ -41,8 +41,6 @@
 		var img=$(".img");
 		var callBack=function(album){
 			//alert(album);
-			console.log(album);
-			console.log(img);
 			album.forEach(function(val,idx){
 				var div=$("<div></div>");
 				var img=$("<img/>");
@@ -52,5 +50,6 @@
 			});
 		}
 		var carera=new $.Pgater($("#btn"),callBack);
+    console.log($.Pgater)
 	</script>
 </html>

@@ -1,14 +1,9 @@
 $.Pgater=(function(){
 	var agent=navigator.userAgent.toLowerCase();
 	var iswx=agent.indexOf('qqbrowser') >= 0;
-	if(iswx){
-		var File=$("<input type='file' id='csl_gater_file' accept='image/*' capture='camera' multiple='multiple'>");
-	}else{
-		var File=$("<input type='file' id='csl_gater_file' accept='image/*' multiple='multiple'>");
-	};
+	var File=$("<input type='file' id='csl_gater_file' accept='image/*' capture='camera' multiple='multiple'>");
 	File.css('display','none');
 	return function(target,callBack){
-		console.log(File);
 		this.ele=File;
 		this.parent=target;
 		this.parent.append(this.ele);
@@ -18,11 +13,9 @@ $.Pgater=(function(){
 })();
 $.Pgater.prototype.bindFuc=function(ele,callBack){
 	ele.on("change",function(){
-		console.log(ele[0].files);
 		var all=ele[0].files;
 		var reader = new FileReader();
 		var album=[];
-		console.log(all.length);
 		var length=all.length;
 		var i=0;
 		var recur=function(){
